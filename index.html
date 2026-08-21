@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Performance Evaluation form 2026</title>
+<style>
+:root{
+  --navy:#173b86;
+  --navy-dark:#06245f;
+  --blue-light:#eaf4ff;
+  --line:#b8c5d6;
+  --ink:#111827;
+  --muted:#475569;
+  --green:#047857;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:28px;
+  background:#eef2f7;
+  color:var(--ink);
+  font-family:"Segoe UI",Arial,sans-serif;
+}
+.sheet{
+  max-width:1500px;
+  margin:auto;
+  background:#fff;
+  border:1px solid #cbd5e1;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 18px 50px rgba(15,23,42,.13);
+}
+.top{
+  padding:18px 28px 12px;
+  text-align:center;
+  border-bottom:4px solid var(--navy);
+  background:linear-gradient(180deg,#fff 0%,#f8fbff 100%);
+}
+.office{
+  margin:0;
+  color:var(--navy);
+  font-size:clamp(36px,5vw,68px);
+  line-height:1.05;
+  font-weight:800;
+  letter-spacing:-1.5px;
+}
+.subtitle{
+  margin:12px 0 0;
+  font-size:clamp(25px,3.2vw,43px);
+  line-height:1.1;
+  font-weight:750;
+  color:#111;
+}
+.meta{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+  margin-top:20px;
+  text-align:left;
+}
+.meta-box{
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:12px 15px;
+  background:#fff;
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+.meta-box b{
+  color:var(--navy);
+  white-space:nowrap;
+  flex-shrink:0;
+  font-size:13px;
+}
+.meta-input{
+  border:0;
+  border-bottom:1px solid #94a3b8;
+  outline:none;
+  width:100%;
+  font:inherit;
+  background:transparent;
+  padding:3px 5px;
+}
+.table-wrap{
+  overflow:auto;
+  border-top:1px solid #cbd5e1;
+}
+table{
+  width:100%;
+  border-collapse:collapse;
+  min-width:1200px;
+}
+th,td{border:1px solid var(--line)}
+thead th{
+  background:var(--blue-light);
+  color:var(--navy);
+  font-weight:800;
+  text-align:center;
+  padding:10px 7px;
+  font-size:13px;
+}
+.small{
+  display:block;
+  font-size:11px;
+  color:#475569;
+  margin-top:2px;
+  font-weight:600;
+}
+td{
+  padding:9px 8px;
+  vertical-align:middle;
+  font-size:12px;
+  line-height:1.35;
+  background:#fff;
+}
+tbody tr:nth-child(even) td{background:#fbfdff}
+.center{text-align:center}
+.ncol{width:48px;text-align:center;font-weight:700;color:var(--navy)}
+.criteria{
+  width:150px;
+  text-align:center;
+  font-weight:700;
+  font-size:13px;
+  color:var(--navy);
+}
+.details{width:405px}
+.eval{width:135px;text-align:center;font-weight:600}
+.weight{width:72px;text-align:center;font-weight:700}
+.freq{width:115px;text-align:center}
+.mark-col{width:82px;text-align:center}
+.q-col{width:105px;text-align:center}
+.details strong{font-size:13px;color:#111}
+.details em{font-size:11px}
+.mark-input{
+  width:62px;
+  height:34px;
+  text-align:center;
+  border:1px solid #b8c4d3;
+  border-radius:7px;
+  outline:none;
+  font-weight:700;
+  font-size:13px;
+  background:#fff;
+}
+.mark-input:focus{
+  border-color:var(--navy);
+  box-shadow:0 0 0 3px #dbeafe;
+}
+.qvalue{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:58px;
+  height:34px;
+  padding:0 8px;
+  border-radius:7px;
+  background:#eaf4ff;
+  color:var(--navy);
+  font-weight:800;
+}
+tfoot td{
+  padding:12px 8px;
+  background:var(--blue-light);
+  font-weight:800;
+  font-size:14px;
+  color:var(--navy);
+}
+.total-label{text-align:right}
+.total-month{text-align:center}
+.total-q{text-align:center;color:var(--green)}
+.controls{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  align-items:center;
+  padding:17px 22px;
+  border-top:1px solid var(--line);
+  background:#f8fbff;
+}
+.note{color:var(--muted);font-size:12px}
+.actions{display:flex;gap:8px}
+button{
+  border:0;
+  border-radius:8px;
+  padding:10px 15px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:12px;
+}
+.primary{background:var(--navy);color:#fff}
+.secondary{background:#e2e8f0;color:#334155}
+@media(max-width:800px){
+  body{padding:10px}
+  .meta{grid-template-columns:1fr}
+  .office{font-size:32px}
+  .subtitle{font-size:24px}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .sheet{box-shadow:none;border:0;border-radius:0}
+  .controls{display:none}
+  .top{padding:12px}
+  @page{size:landscape;margin:8mm}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+<div class="top">
+<div class="office">International Affairs Office</div>
+<div class="subtitle">Performance Evaluation form 2026</div>
+<div class="meta">
+<div class="meta-box"><b>Employee id</b><input class="meta-input" aria-label="Employee id"></div>
+<div class="meta-box"><b>Employee Name</b><input class="meta-input" aria-label="Employee Name"></div>
+</div>
+</div>
+<div class="table-wrap">
+<table id="evaluation">
+<thead><tr>
+<th class="ncol">N</th><th class="criteria">Criteria</th><th class="details">Brief Details</th>
+<th class="eval">Evaluator / Present to</th><th class="weight">Weightage</th><th class="freq">Frequency</th>
+<th class="mark-col">Jan<span class="small">Marks</span></th><th class="mark-col">Feb<span class="small">Marks</span></th>
+<th class="mark-col">Mar<span class="small">Marks</span></th><th class="q-col">1st Quarter<span class="small">of session</span></th>
+</tr></thead>
+<tbody></tbody>
+<tfoot><tr>
+<td colspan="4" class="total-label">Total</td><td class="total-month">100</td><td></td>
+<td id="janTotal" class="total-month">0</td><td id="febTotal" class="total-month">0</td><td id="marTotal" class="total-month">0</td><td id="qTotal" class="total-q">0</td>
+</tr></tfoot>
+</table>
+</div>
+<div class="controls">
+<div class="note">Enter marks in Jan, Feb and Mar. <b>1st Quarter of session</b> is calculated automatically as the quarterly average, matching the supplied form.</div>
+<div class="actions"><button class="secondary" onclick="window.print()">Print / Save PDF</button><button class="primary" onclick="resetMarks()">Reset Marks</button></div>
+</div>
+</div>
+<script>
+const rows = [{"n": "1", "criteria": "Work Attitude", "details": "<strong>Work Attitude</strong><br>Prepare personal Schedule and Monthly Targets, Mark Attendance on time<br>& Quickly Response on whatsapp and Email", "evaluator": "Self", "weightage": 20, "frequency": "Monthly", "values": [20, 20, 20]}, {"n": "2", "criteria": "Routine Tasks: Reports<br>Presentation", "details": "<strong>Country Performance Report Jaiza form & Summary<br>(Countries & Departments)</strong><br><em><u>One page country wise report or jaiza form Present krna</u></em><br>1. Country & Sub Continent wise one page/Jaiza form<br>2. Shoora Action Points (TMS)<br>3. Status Performance Reports of Religious Activities & Department info<br>(Kis Country/Subcontinent ki karkardagi jama hue or rukne shoora say<br>messages kerwanay)", "evaluator": "Rukn-e-Shoora", "weightage": 30, "frequency": "Monthly", "values": [30, 30, 30]}, {"n": "3", "criteria": "Routine Tasks: Work<br>Delivery", "details": "<strong>Country & Sub continent wise Data Record</strong><br><em><u>(Data organized rakhna in tamam files ko check krna, update krna or<br>International Affair office mai send krna)</u></em><br>4. Weekly Booklet report (Weekly)<br>5. City wise Religious Activities Performance (Monthly)<br>6. Departments Performance (Monthly)<br><strong>Quarterly Update:</strong><br>7. Country-wise Drive Folders (Quarterly)<br>8. Sub-Continent & Country PPT (Updated Quarterly)<br>9. Country Target Setting (Quarterly)<br>10. Visitors record of Global Markaz ( Quarterly)<br>11. Country Informative Reports (Semi-Annually)", "evaluator": "Information desk", "weightage": 35, "frequency": "Monthly/Quarterly", "values": [30, 30, 30]}, {"n": "4", "criteria": "Routine Tasks: Work<br>Delivery", "details": "<strong><u>Live Sheet Tasks:</u></strong><br><em><strong><u>in tamam live sheet ko complete, accurate aur real-time update rakhein</u></strong></em><br>12. Property Details with Dept info<br>13. Organization Locations Sheet<br>14. List of Muballigheen & Munsalikeen<br>15. Country and Sub Continent Mushawart List<br>16. Schedule Sheets", "evaluator": "Information desk", "weightage": 15, "frequency": "Quarterly", "values": [15, 15, 15]}];
+
+const tbody=document.querySelector("#evaluation tbody");
+function makeRow(r,i){
+ const tr=document.createElement("tr");
+ tr.innerHTML=`
+ <td class="ncol">${r.n}</td><td class="criteria">${r.criteria}</td><td class="details">${r.details}</td>
+ <td class="eval">${r.evaluator}</td><td class="weight">${r.weightage}</td><td class="freq">${r.frequency}</td>
+ <td class="center"><input class="mark-input" type="number" min="0" max="${r.weightage}" step="1" value="${r.values[0]}" data-row="${i}" data-month="0"></td>
+ <td class="center"><input class="mark-input" type="number" min="0" max="${r.weightage}" step="1" value="${r.values[1]}" data-row="${i}" data-month="1"></td>
+ <td class="center"><input class="mark-input" type="number" min="0" max="${r.weightage}" step="1" value="${r.values[2]}" data-row="${i}" data-month="2"></td>
+ <td class="center"><span class="qvalue" id="q-${i}">0</span></td>`;
+ tbody.appendChild(tr);
+}
+rows.forEach(makeRow);
+
+function num(v){const n=Number(v);return Number.isFinite(n)?n:0}
+function calculate(){
+ let totals=[0,0,0],qTotal=0;
+ document.querySelectorAll(".mark-input").forEach(input=>{totals[Number(input.dataset.month)]+=num(input.value)});
+ rows.forEach((r,i)=>{
+   const inputs=[...document.querySelectorAll(`.mark-input[data-row="${i}"]`)];
+   const vals=inputs.map(x=>num(x.value));
+   const q=Math.round((vals[0]+vals[1]+vals[2])/3);
+   document.getElementById(`q-${i}`).textContent=q;qTotal+=q;
+ });
+ document.getElementById("janTotal").textContent=totals[0];
+ document.getElementById("febTotal").textContent=totals[1];
+ document.getElementById("marTotal").textContent=totals[2];
+ document.getElementById("qTotal").textContent=qTotal;
+}
+const STORAGE_KEY="performance_evaluation_form_2026_data";
+
+function saveToLocalStorage(){
+ const data={
+   employeeId:document.querySelector('[aria-label="Employee id"]').value,
+   employeeName:document.querySelector('[aria-label="Employee Name"]').value,
+   marks:[...document.querySelectorAll(".mark-input")].map(input=>input.value)
+ };
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+}
+
+function loadFromLocalStorage(){
+ try{
+   const data=JSON.parse(localStorage.getItem(STORAGE_KEY)||"null");
+   if(!data)return;
+   document.querySelector('[aria-label="Employee id"]').value=data.employeeId||"";
+   document.querySelector('[aria-label="Employee Name"]').value=data.employeeName||"";
+   if(Array.isArray(data.marks)){
+     document.querySelectorAll(".mark-input").forEach((input,i)=>{
+       if(data.marks[i]!==undefined)input.value=data.marks[i];
+     });
+   }
+ }catch(e){}
+}
+
+document.addEventListener("input",e=>{
+ if(e.target.classList.contains("mark-input")){
+   calculate();
+   saveToLocalStorage();
+ }
+ if(e.target.classList.contains("meta-input"))saveToLocalStorage();
+});
+
+loadFromLocalStorage();
+calculate();
+
+function resetMarks(){
+ document.querySelectorAll(".mark-input").forEach(input=>{
+   const r=rows[Number(input.dataset.row)];
+   input.value=r.values[Number(input.dataset.month)];
+ });
+ calculate();
+ saveToLocalStorage();
+}
+</script>
+</body>
+</html>
